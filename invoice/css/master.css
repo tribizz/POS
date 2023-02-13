@@ -1,0 +1,130 @@
+@import url('../vendor/normalize.css');
+@import url('../vendor/flexboxgrid.css');
+@import url('./variables.css');
+@import url('./fonts.css');
+@import url('./screen.css') screen;
+@import url('./print.css') print;
+
+*, *::before, *::after {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== page format ===== */
+#invoice {
+  width: var(--doc-width);
+  height: var(--doc-height);
+  padding-top: var(--margin-top);
+  padding-right: var(--margin-right);
+  padding-bottom: var(--margin-bottom);
+  padding-left: var(--margin-left);
+  /* background: lime; */
+}
+
+/* ===== keep footer where it belongs  ===== */
+article {
+  min-height: calc(var(--doc-height) - var(--margin-top) - var(--footer-height));
+  /* background: green; */
+}
+
+input, textarea {
+  border: none;
+}
+
+textarea, input {
+  width: 100%;
+}
+
+/* ===== typo ===== */
+body {
+  font-family: 'Signika', sans-serif;
+  font-size: 11pt;
+}
+
+textarea[data-lang="seller-address-placeholder"],
+p[data-print-p="seller-address-placeholder"],
+textarea[data-lang="invoice-note-placeholder"],
+p[data-print-p="invoice-note-placeholder"],
+footer textarea,
+footer p {
+  font-size: 9pt;
+}
+
+label {
+  font-weight: bolder;
+}
+
+/* ===== text alignment ===== */
+input[type='number'],
+input[type='text'],
+textarea[data-lang="invoice-note-placeholder"],
+p[data-print-p="invoice-note-placeholder"],
+#itemsTotalPriceLabel {
+  text-align: right;
+  /* background: red; */
+}
+
+#invoiceNumber {
+  text-align: left;
+}
+
+input[data-lang="item-unit-placeholder"] {
+  text-align: left;
+}
+
+/* ===== footer ===== */
+footer {
+  border-top: .5mm solid black;
+  /* background: red; */
+}
+
+/* ===== table ===== */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 1mm;
+  border-bottom-width: .7mm;
+}
+
+th, td {
+  border-bottom-style: solid;
+}
+
+tbody td {
+  padding: 1mm 0;
+  border-bottom-width: .5mm;
+  vertical-align: top;
+}
+
+th+th, td+td {
+  padding-left: 2mm;
+}
+
+th[data-lang="item-position"] {
+  width: 5%;
+}
+
+th[data-lang="item-description"] {
+  width: 45%;
+}
+
+th[data-lang="item-amount"] {
+  width: 5%;
+}
+
+th[data-lang="item-unit"] {
+  width: 15%;
+}
+
+th[data-lang="item-price"] {
+  width: 15%;
+}
+
+th[data-lang="item-price-sum"] {
+  width: 15%;
+}
